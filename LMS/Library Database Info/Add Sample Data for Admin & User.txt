@@ -1,0 +1,13 @@
+Use LibrarySystem;
+
+INSERT INTO AdminMst (Name, UserName, Password, EntryDate)
+VALUES ('Admin User', 'admin', 'admin123', GETDATE());
+
+INSERT INTO StudentMst (
+    StudentName, BranchName, Mobile, Address, City, Pincode, DOB, Gender,
+    Email, Password, Image, EntryDate
+)
+VALUES (
+    'Rehan Ahmed', 'Computer Science', '03405851760', 'Kala Gujran, Jhelum', 'Jhelum', '49600',
+    '2005-04-08', 'Male', 'rehan@gmail.com', 'rehan123', '', GETDATE()
+);

@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Library Management - Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server" />
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+
+        .banner-img {
+            width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .sidebar {
+            background-color: #e6f2ff; /* Light blue */
+            min-height: 100vh;
+            color: #000;
+            padding-top: 20px;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        .content-wrapper {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .btn-custom {
+            background-color: maroon;
+            color: white;
+            font-size: 1rem;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .btn-custom:hover {
+            background-color: #800000;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <!-- Banner -->
+        <div class="container-fluid bg-light py-3">
+            <div class="text-center">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/img/banner.png" CssClass="banner-img" />
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Sidebar -->
+                <div class="col-md-3 sidebar text-center">
+                    <h5>Welcome</h5>
+                    <asp:Label ID="lblname" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
+                    <hr style="border-color: #6c757d;" />
+                    <div class="d-grid gap-2 px-3">
+                        <asp:Button ID="Button11" runat="server" CssClass="btn-custom" Text="Add Publication"
+                            PostBackUrl="~/Publication.aspx" CausesValidation="False" />
+                        <asp:Button ID="Button1" runat="server" CssClass="btn-custom" Text="Add Book"
+                            PostBackUrl="~/Addbook.aspx" CausesValidation="False" />
+                        <asp:Button ID="Button2" runat="server" CssClass="btn-custom" Text="Book Report"
+                            PostBackUrl="~/bookreport.aspx" CausesValidation="False" />
+                        <asp:Button ID="Button3" runat="server" CssClass="btn-custom" Text="Add Branch"
+                            PostBackUrl="~/Addbranch.aspx" CausesValidation="False" />
+                        <asp:Button ID="Button4" runat="server" CssClass="btn-custom" Text="Add Student"
+                            PostBackUrl="~/AddStudent.aspx" CausesValidation="False" />
+                        <asp:Button ID="Button5" runat="server" CssClass="btn-custom" Text="Student Report"
+                            PostBackUrl="~/Studenteport.aspx" CausesValidation="False" />
+                        <asp:Button ID="Button6" runat="server" CssClass="btn-custom" Text="Issue Book"
+                            PostBackUrl="~/BookIssue.aspx" CausesValidation="False" />
+                        <asp:Button ID="Button7" runat="server" CssClass="btn-custom" Text="Issue Report"
+                            PostBackUrl="~/Issuereport.aspx" CausesValidation="False" />
+                        <asp:Button ID="Button8" runat="server" CssClass="btn-custom" Text="Return Book"
+                            PostBackUrl="~/BookReturn.aspx" CausesValidation="False" />
+                        <asp:Button ID="Button9" runat="server" CssClass="btn-custom" Text="Penalty"
+                            PostBackUrl="~/Panalty.aspx" CausesValidation="False" />
+                        <asp:Button ID="Button10" runat="server" CssClass="btn-custom" Text="Logout"
+                            CausesValidation="False" OnClick="Button10_Click" />
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="col-md-9 main-content">
+                    <div class="content-wrapper">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </form>
+</body>
+</html>
